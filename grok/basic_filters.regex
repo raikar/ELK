@@ -1,0 +1,20 @@
+(?<logdate>%{DATE} %{TIME},%{INT})
+
+
+2016-03-14 23:05:04 10.0.0.1:8001 GET /transact/images/HealthCheck.gif 10.10.10.1 - 200 0.0010 43 10.10.10.2 -
+(?<logdate>%{DATE} %{TIME}) %{IP:client}:%{BASE10NUM:port} %{WORD:method} %{URIPATH:request} %{IP:source}
+
+
+55.3.244.1 GET /index.html 15824 0.043
+%{IP:client} %{WORD:method} %{URIPATH:request} %{NUMBER:bytes} %{NUMBER:duration}
+
+
+10 Sep 2014
+%{MONTHDAY} %{MONTH} %{YEAR}
+
+Jan  1 06:25:43 mailserver14 postfix/cleanup[21403]: BEF25A72965: message-id=<20130101142543.5828399CCAF@mailserver14.example.com>
+%{SYSLOGBASE} %{GREEDYDATA:syslog_message}
+
+
+2016-07-11T23:56:42.000+00:00 INFO [MySecretApp.com.Transaction.Manager]:Starting transaction for session -464410bf-37bf-475a-afc0-498e0199f008
+%{TIMESTAMP_ISO8601:timestamp} %{LOGLEVEL:log-level} \[%{DATA:class}\]:%{GREEDYDATA:message}
